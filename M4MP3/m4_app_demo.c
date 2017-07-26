@@ -1,4 +1,4 @@
-#include <stdint.h>
+ #include <stdint.h>
 #include <stdbool.h>
 #include <stdarg.h>
 #include <time.h>
@@ -11,7 +11,7 @@
 #include "driverlib/interrupt.h"
 #include "driverlib/systick.h"
 
-#if 1
+#if 0
 #include "tmp/bma222drv.h"
 #endif
 
@@ -91,8 +91,8 @@ Demo_Func dy_app[] = {
                     , demo_tmr_count},
 //    { S_CC1101      , "CC1101 无线收发"
 //                    , demo_cc1101   },
-    { S_ACCEL       , "    加 速 度"
-                    , demo_accel    },
+//    { S_ACCEL       , "    加 速 度"
+//                    , demo_accel    },
 #endif
 };
 
@@ -425,21 +425,17 @@ void demo_accel(void)
     
     while (current_state == S_ACCEL)
     {
+#if 0
         get_acc(i2cReadBuffer);
         
-#if 0
         accel_x = i2cReadBuffer[0];
         accel_y = i2cReadBuffer[2];
         accel_z = i2cReadBuffer[4];
         
-//        accel_x = raw_accel_x;
-//        accel_y = raw_accel_y;
-//        accel_z = raw_accel_z;
-        
         lcd_printf(0, 1, "X=%.1f m^2/s", accel_x);
         lcd_printf(0, 2, "Y=%.1f m^2/s", accel_y);
         lcd_printf(0, 3, "Z=%.1f m^2/s", accel_z);
-#else
+
         raw_accel_x = i2cReadBuffer[1];
         raw_accel_y = i2cReadBuffer[3];
         raw_accel_z = i2cReadBuffer[5];

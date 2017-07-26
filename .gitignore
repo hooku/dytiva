@@ -307,3 +307,8 @@ dbg/
 *.lst
 *.axf
 *.bin
+
+# Project
+M4MP3/FatFs
+M4MP3/m2tklib
+M4MP3/u8glib
