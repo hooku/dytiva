@@ -307,6 +307,10 @@ dbg/
 *.lst
 *.axf
 *.bin
+*.crf
+*.htm
+*.d
+*.o
 
 # Project
 M4MP3/FatFs

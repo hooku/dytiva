@@ -66,9 +66,9 @@
             <nStopU2X>0</nStopU2X>
           </BeforeCompile>
           <BeforeMake>
-            <RunUserProg1>1</RunUserProg1>
+            <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name>C:\Python27\python.exe E:\polone\1\DYTiva\M4MP3\AUTOVER.py</UserProg1Name>
+            <UserProg1Name>.\AUTOVER.py</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
@@ -364,7 +364,7 @@
               <MiscControls>--c99</MiscControls>
               <Define>rvmdk PART_TM4C123GH6PM TARGET_IS_BLIZZARD_RB1 _USE_USB USE_DY_PB_2 USE_DY_PB_3 USE_DY_PB_4 USE_DY_PB_FINAL _M4_FREERTOS</Define>
               <Undefine></Undefine>
-              <IncludePath>.;C:\ti\TivaWare_C_Series-2.1.0.12573;C:\ti\TivaWare_C_Series-2.1.0.12573\third_party\FreeRTOS\Source\include;C:\ti\TivaWare_C_Series-2.1.0.12573\third_party\FreeRTOS\Source\portable\RVDS\ARM_CM4F</IncludePath>
+              <IncludePath>.;C:\ti\TivaWare_C_Series-2.1.4.178;C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g;C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\usb_dev_msc;C:\ti\TivaWare_C_Series-2.1.4.178\third_party\FreeRTOS\Source\include;C:\ti\TivaWare_C_Series-2.1.4.178\third_party\FreeRTOS\Source\portable\RVDS\ARM_CM4F</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1168,7 +1168,7 @@
             <File>
               <FileName>driverlib.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>C:\ti\TivaWare_C_Series-1.0\driverlib\rvmdk\driverlib.lib</FilePath>
+              <FilePath>C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\rvmdk\driverlib.lib</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -1176,7 +1176,7 @@
                   <RVCTZI>0</RVCTZI>
                   <RVCTOtherData>0</RVCTOtherData>
                   <ModuleSelection>0</ModuleSelection>
-                  <IncludeInBuild>0</IncludeInBuild>
+                  <IncludeInBuild>1</IncludeInBuild>
                   <AlwaysBuild>2</AlwaysBuild>
                   <GenerateAssemblyFile>2</GenerateAssemblyFile>
                   <AssembleAssemblyFile>2</AssembleAssemblyFile>
@@ -1190,19 +1190,14 @@
               </FileOption>
             </File>
             <File>
-              <FileName>driverlib.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>C:\ti\TivaWare_C_Series-2.1.0.12573\driverlib\rvmdk\driverlib.lib</FilePath>
-            </File>
-            <File>
               <FileName>usblib.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>C:\ti\TivaWare_C_Series-2.1.0.12573\usblib\rvmdk\usblib.lib</FilePath>
+              <FilePath>C:\ti\TivaWare_C_Series-2.1.4.178\usblib\rvmdk\usblib.lib</FilePath>
             </File>
             <File>
               <FileName>ustdlib.c</FileName>
               <FileType>1</FileType>
-              <FilePath>C:\ti\TivaWare_C_Series-2.1.0.12573\utils\ustdlib.c</FilePath>
+              <FilePath>C:\ti\TivaWare_C_Series-2.1.4.178\utils\ustdlib.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1385,24 +1380,14 @@
           <GroupName>driver_usbmsc</GroupName>
           <Files>
             <File>
-              <FileName>C:\ti\TivaWare_C_Series-2.1.2.111\examples\boards\dk-tm4c123g\usb_dev_msc\usbdsdcard.c</FileName>
+              <FileName>usbdsdcard.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\usbdsdcard.c</FilePath>
+              <FilePath>C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\usb_dev_msc\usbdsdcard.c</FilePath>
             </File>
             <File>
-              <FileName>C:\ti\TivaWare_C_Series-2.1.2.111\examples\boards\dk-tm4c123g\usb_dev_msc\usb_msc_structs.c</FileName>
+              <FileName>usb_msc_structs.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\usb_msc_structs.c</FilePath>
-            </File>
-            <File>
-              <FileName>C:\ti\TivaWare_C_Series-2.1.2.111\examples\boards\dk-tm4c123g\usb_dev_msc\usbdsdcard.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usbdsdcard.h</FilePath>
-            </File>
-            <File>
-              <FileName>C:\ti\TivaWare_C_Series-2.1.2.111\examples\boards\dk-tm4c123g\usb_dev_msc\usb_msc_structs.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb_msc_structs.h</FilePath>
+              <FilePath>C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\dk-tm4c123g\usb_dev_msc\usb_msc_structs.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -1423,6 +1408,66 @@
         </Group>
         <Group>
           <GroupName>driver_accel</GroupName>
+          <GroupOption>
+            <CommonProperty>
+              <UseCPPCompiler>0</UseCPPCompiler>
+              <RVCTCodeConst>0</RVCTCodeConst>
+              <RVCTZI>0</RVCTZI>
+              <RVCTOtherData>0</RVCTOtherData>
+              <ModuleSelection>0</ModuleSelection>
+              <IncludeInBuild>0</IncludeInBuild>
+              <AlwaysBuild>2</AlwaysBuild>
+              <GenerateAssemblyFile>2</GenerateAssemblyFile>
+              <AssembleAssemblyFile>2</AssembleAssemblyFile>
+              <PublicsOnly>2</PublicsOnly>
+              <StopOnExitCode>11</StopOnExitCode>
+              <CustomArgument></CustomArgument>
+              <IncludeLibraryModules></IncludeLibraryModules>
+              <ComprImg>1</ComprImg>
+            </CommonProperty>
+            <GroupArmAds>
+              <Cads>
+                <interw>2</interw>
+                <Optim>0</Optim>
+                <oTime>2</oTime>
+                <SplitLS>2</SplitLS>
+                <OneElfS>2</OneElfS>
+                <Strict>2</Strict>
+                <EnumInt>2</EnumInt>
+                <PlainCh>2</PlainCh>
+                <Ropi>2</Ropi>
+                <Rwpi>2</Rwpi>
+                <wLevel>2</wLevel>
+                <uThumb>2</uThumb>
+                <uSurpInc>2</uSurpInc>
+                <uC99>2</uC99>
+                <useXO>2</useXO>
+                <VariousControls>
+                  <MiscControls></MiscControls>
+                  <Define></Define>
+                  <Undefine></Undefine>
+                  <IncludePath></IncludePath>
+                </VariousControls>
+              </Cads>
+              <Aads>
+                <interw>2</interw>
+                <Ropi>2</Ropi>
+                <Rwpi>2</Rwpi>
+                <thumb>2</thumb>
+                <SplitLS>2</SplitLS>
+                <SwStkChk>2</SwStkChk>
+                <NoWarn>2</NoWarn>
+                <uSurpInc>2</uSurpInc>
+                <useXO>2</useXO>
+                <VariousControls>
+                  <MiscControls></MiscControls>
+                  <Define></Define>
+                  <Undefine></Undefine>
+                  <IncludePath></IncludePath>
+                </VariousControls>
+              </Aads>
+            </GroupArmAds>
+          </GroupOption>
           <Files>
             <File>
               <FileName>Accel_App.c</FileName>
