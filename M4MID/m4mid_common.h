@@ -8,6 +8,8 @@
 #define M4M_UART_BASE   0
 #define M4M_UART_BAUD   115200
 
+#define M4M_SPI_BASE_LCD    1
+
 #define MAX_LOG_BUFFER  128 // bytes
 
 

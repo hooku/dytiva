@@ -28,6 +28,11 @@ extern inline void gpio_write(uint8_t , uint32_t );
 // i2c:
 
 // spi:
+extern void spi_init(uint32_t );
+extern inline void spi_put(uint8_t , uint32_t );
+extern inline uint32_t spi_get(uint8_t );
+extern void spi_write(uint8_t , uint8_t *, uint32_t );
+extern uint32_t spi_read(uint8_t , uint32_t *, uint32_t );
 
 // uart:
 extern void uart_init(uint8_t , uint32_t );
