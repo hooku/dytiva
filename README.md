@@ -1,25 +1,78 @@
-# Introduction to DYTiva
-The DYTiva project is the corresponding MCU software for DYTiva external board.
+# DYTiva
 
-## Function
+DYTiva是一套运行在[EK-TM4C123GXL](http://www.ti.com/tool/ek-tm4c123gxl) + Tiva 口袋板[gototi](http://www.gototi.com)上的MCU程序。  
 
-### Demo Mode
+**程序主要包含如下驱动**
+* 显示屏：UC1701 12864 单色液晶屏驱动
+* 字库芯片：[GT20L16S1Y](http://www.genitop.com/Products/indexlist_GT20L16S1Y.html) 点阵汉字库芯片驱动
+* 音频AD/DA：[TLV320AIC23B](http://www.ti.com/product/tlv320aic23b) 音频编解码器驱动
+* DA: DAC7512
+* 温度传感器芯片：TMP100
+* SD驱动（SPI模式）
 
-|Item|Function|
+# 启动模式
+
+程序包含了4种启动模式
+1. Demo 模式
+2. 音频录放模式
+3. SD刷固件模式
+4. USB MSC读卡器模式
+
+**启动时按键映射关系**
+
+在板子复位时，按住KEY1~KEY4的某个按键不放，进入某种启动模式。  
+若不按键，则默认进入Demo模式。
+
+|按键|按键|
 |---|---|
-|TI大学计划|LCD Text Demo|
-|温度|
-|电位器ADC-DAC|
-|PWM亮度控制|
-|光敏电阻ADC|
-|蜂鸣器|
-|串口|
-|RTC时钟|
-|按键计数|
-|加速度|Accelerate Sensor Demo|
+|KEY1 音频录放模式|KEY2 对讲机模式（未完成）|
+|KEY3 SD刷固件模式|KEY4 Demo模式|
 
-### Audio Mode
-#### USB SD Card Reader
-However, the speed is .
+在任意模式下插入USB数据线，则程序将自动切换到USB MSC读卡器模式。
 
+**字库**   
+本程序所有的中文文字均从字库芯片中读取，英文文字、数字和标点采用Fixedsys字体，字模数据内嵌在程序里。
 
+## Demo 模式
+
+### Demo 模式包含的功能
+
+|名称|功能|
+|---|---|
+|TI大学计划|显示滚动文字|
+|温度|显示TMP100传感器的温度、CPU内部AD温度|
+|电位器ADC-DAC|显示电位器滚轮的值|
+|PWM亮度控制|PWM控制白色LED渐亮渐暗|
+|光敏电阻ADC|获取光敏电阻的值|
+|蜂鸣器|方波蜂鸣《世上只有妈妈好》|
+|串口|板子每秒从UART1输出一个字符，并读入一个字符，显示在屏幕上|
+|RTC时钟|显示板子内部RTC的时间日期计时|
+|按键计数|使用Timer实现的按键计数|
+
+## 音频录放模式
+该模式下，板子作为Wave播放器/录音机。  
+程序使用FatFS作为文件系统驱动，将音频数据通过I2S发送到音频解码芯片。
+
+### 音频录放模式时按键映射关系
+
+|按键|按键|
+|---|---|
+|KEY1 音频播放/暂停|KEY2 录音/停止|
+|KEY3 前一首|KEY4 后一首|
+
+### 音频播放
+程序读取TF卡上的wav格式音频文件播放。音频播放时，屏幕会显示当前已播放时间，以及旋转的CD图标。  
+可以用按键来选择、控制音频播放。  
+程序支持播放的wav文件的比特率是48K 16Bit,Stereo。 
+
+### 音频录音
+按下录音按键，程序将扩展板的麦克采样的录音录制到SD卡根目录的record.wav文件中。  
+录制的wav文件的比特率是8K 8Bit,Mono。
+
+## SD刷固件模式
+在TF卡的文件系统上放入bin格式的固件，启动至SD刷固件模式，屏幕会显示找到的待刷入的固件。  
+按下KEY3刷入固件，待固件写入完成后，系统自动重启并进入新固件。
+
+## USB读卡器模式
+该Demo改自于Tiva SDK，实现了一个USB 2.0 MSC设备。  
+读卡器模式下，磁盘读写吞吐率<1MB/s。
